@@ -26,6 +26,7 @@ def user_login(request):
             if user is not None:
                 login(request, user)
                 return redirect('home')
+        return render(request, 'login.html', {'form': form})
     else:
         form = UserLoginForm()
     return render(request, 'login.html', {'form': form})
